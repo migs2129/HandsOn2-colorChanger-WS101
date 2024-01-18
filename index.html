@@ -37,10 +37,10 @@
         });
 
         function changeColor(){
-            if (isOn === true && isDarkMode === false){
+            if (isDarkMode === false && isOn === true){
                 box.style.backgroundColor = "blue";
                 isOn = false;
-            }else if (isOn === false && isDarkMode ===false){
+            }else if (isDarkMode === false && isOn === false){
                 box.style.backgroundColor = "green"
                 isOn = true;
             }
