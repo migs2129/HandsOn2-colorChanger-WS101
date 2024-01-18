@@ -37,21 +37,25 @@
         });
 
         function changeColor(){
-            if (isDarkMode === false && isOn === true){
+            if (isDarkMode === false && isOn === true ){
                 box.style.backgroundColor = "blue";
                 isOn = false;
-            }else if (isDarkMode === false && isOn === false){
+                isDarkMode = false;
+            }else if (isDarkMode === false && isOn === false ){
                 box.style.backgroundColor = "green"
                 isOn = true;
+                isDarkMode = false;
             }
         }
         function changeColorDM(){
             if(isDarkMode === true && isOn === true){
                 box.style.backgroundColor = "#1F51FF";
                 isOn = false;
-            }else if(isDarkMode === true && isOn ===false){
+                isDarkMode = true;
+            }else if(isDarkMode === true && isOn ===false ){
                 box.style.backgroundColor = "#39FF14";
                 isOn = true;
+                isDarkMode = true;
             }
         }
         //Adding flip effects when the button is clicked
