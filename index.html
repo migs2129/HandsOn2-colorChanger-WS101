@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On-No.2</title>
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <h1 id="title">Change the Box Color</h1>
+    <section class="nightmode">
+        <button id="togglebtn" onmouseover="pulsing()" onmouseout="pulseOut()"><i class="fa-solid fa-toggle-on"></i></button><span id="btnText">Light Mode</span>
+    </section>
+    <section class="main">
+        <div id="box"></div><br>
+    </section>
+    <button id="btnChange" onclick="flip()">Change Color</button>
+    
+    <script>
+        const box = document.getElementById("box");
+        let buttonBox = document.getElementById("btnChange");
+        let turnOnOff = document.getElementById("togglebtn");
+        
+        //Variables for dark mode feature
+        let body = document.body;
+        let isOn = true; //Acts like a switch
+        let isDarkMode = false; //Acts like a switch
+
+        buttonBox.addEventListener("click", function(){
+            if(isDarkMode === false){
+                changeColor();
+            }else{
+                changeColorDM();
+            }
+        });
+
+        function changeColor(){
+            if (isOn === true){
+                box.style.backgroundColor = "blue";
+                isOn = false;
+            }else{
+                box.style.backgroundColor = "green"
+                isOn = true;
+            }
+        }
+        function changeColorDM(){
+            if(isDarkMode === true && isOn === true){
+                box.style.backgroundColor = "#1F51FF";
+                isOn = false;
+            }else{
+                box.style.backgroundColor = "#39FF14";
+                isOn = true;
+            }
+        }
+        //Adding flip effects when the button is clicked
+        function flip(){
+            box.style.animation ="flipping 0.5s";
+            setTimeout(() => {
+                box.style.animation = "";
+            }, 500);
+        }
+
+        //Animation for the toggle of night mode
+        function pulsing(){
+            turnOnOff.style.animation = "pulsing 0.45s infinite alternate";
+        }
+        function pulseOut(){
+            turnOnOff.style.animation = "pulsing";
+        }
+    </script>
+    <script src="src/script/script.js"></script><!--Script for the Night Mode feature-->
+    <script src="https://kit.fontawesome.com/7ef0eb13a1.js" crossorigin="anonymous"></script>
+</body>
+</html>
