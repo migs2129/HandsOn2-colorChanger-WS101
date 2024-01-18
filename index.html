@@ -37,10 +37,10 @@
         });
 
         function changeColor(){
-            if (isOn === true){
+            if (isOn === true && isDarkMode === false){
                 box.style.backgroundColor = "blue";
                 isOn = false;
-            }else{
+            }else if (isOn === false && isDarkMode ===false){
                 box.style.backgroundColor = "green"
                 isOn = true;
             }
@@ -49,7 +49,7 @@
             if(isDarkMode === true && isOn === true){
                 box.style.backgroundColor = "#1F51FF";
                 isOn = false;
-            }else{
+            }else if(isDarkMode === true && isOn ===false){
                 box.style.backgroundColor = "#39FF14";
                 isOn = true;
             }
