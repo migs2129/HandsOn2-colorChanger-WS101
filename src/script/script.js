@@ -20,6 +20,7 @@ if(nightSwitch === true){
     buttonBox.style.color = "white";
     nightSwitch = false;
     isDarkMode = true;
+    isOn = true;
 } else{
     body.style.color = "#000";
     body.style.backgroundColor = "#E0FFFF";
@@ -34,5 +35,6 @@ if(nightSwitch === true){
     buttonBox.style.color = "black";
     nightSwitch = true;
     isDarkMode = false;
+    isOn = true;
     }
 }
